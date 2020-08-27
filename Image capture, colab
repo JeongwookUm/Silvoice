@@ -1,0 +1,19 @@
+! pip install moviepy
+
+from moviepy.editor import *
+import imageio
+
+
+imageio.plugins.ffmpeg.download()
+
+!ffmpeg -ss 00:04:33 -i video.mp4 -y -vframes 1 -an -s 1280x720 image4.jpg
+!ffmpeg -ss 00:04:52 -i video.mp4 -y -vframes 1 -an -s 1280x720 image8.jpg
+!ffmpeg -ss 00:04:56 -i video.mp4 -y -vframes 1 -an -s 1280x720 image9.jpg
+!ffmpeg -ss 00:05:34 -i video.mp4 -y -vframes 1 -an -s 1280x720 image11.jpg
+!ffmpeg -ss 00:05:38 -i video.mp4 -y -vframes 1 -an -s 1280x720 image12.jpg
+!ffmpeg -ss 00:06:40 -i video.mp4 -y -vframes 1 -an -s 1280x720 image13.jpg
+!ffmpeg -ss 00:06:55 -i video.mp4 -y -vframes 1 -an -s 1280x720 image14.jpg
+!ffmpeg -ss 00:07:04 -i video.mp4 -y -vframes 1 -an -s 1280x720 image15.jpg
+!ffmpeg -ss 00:07:09 -i video.mp4 -y -vframes 1 -an -s 1280x720 image16.jpg
+!ffmpeg -ss 00:07:13 -i video.mp4 -y -vframes 1 -an -s 1280x720 image17.jpg
+!ffmpeg -ss 00:07:21 -i video.mp4 -y -vframes 1 -an -s 1280x720 image18.jpg
