@@ -1,0 +1,28 @@
+import os, io
+
+credential_path = "C:\\Users\\IDEG\\PycharmProjects\\dreamingai\\venv\\Lib\\site-packages\\dreaming-ai-a1f7d04cfc1b.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
+
+def detect_text(path):
+    from google.cloud import vision
+    client = vision.ImageAnnotatorClient()
+
+    with io.open(path, 'rb') as image_file:
+        content = image_file.read()
+
+    image = vision.types.Image(content=content)
+
+    response = client.text_detection(image=image)
+    texts = response.text_annotations
+
+    #print(texts[0].description)
+
+    f = open("test.txt", 'w')
+    f.write(texts[0].description)
+    f.close()
+
+file_name = os.path.join(
+    os.path.dirname(__file__),
+    'testimage.jpg')
+
+detect_text(file_name)
